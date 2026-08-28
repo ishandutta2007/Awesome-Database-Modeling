@@ -1,0 +1,250 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0B0F19" />
+      <stop offset="50%" stop-color="#111827" />
+      <stop offset="100%" stop-color="#0F172A" />
+    </linearGradient>
+
+    <!-- Accent Gradient -->
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366F1" />
+      <stop offset="50%" stop-color="#8B5CF6" />
+      <stop offset="100%" stop-color="#EC4899" />
+    </linearGradient>
+
+    <!-- Cyan to Blue Gradient -->
+    <linearGradient id="cyanBlue" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#06B6D4" />
+      <stop offset="100%" stop-color="#3B82F6" />
+    </linearGradient>
+
+    <!-- Card Background Gradient -->
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.85" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.9" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <style>
+    .title {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 800;
+      font-size: 46px;
+      fill: #FFFFFF;
+      letter-spacing: -0.5px;
+    }
+    .subtitle {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 500;
+      font-size: 19px;
+      fill: #94A3B8;
+      letter-spacing: 0.2px;
+    }
+    .tagline {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      fill: #38BDF8;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+    .badge-text {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .anim-pulse {
+      animation: pulse 4s ease-in-out infinite alternate;
+    }
+    .anim-flow {
+      stroke-dasharray: 8, 8;
+      animation: flow 30s linear infinite;
+    }
+    .anim-flow-reverse {
+      stroke-dasharray: 6, 6;
+      animation: flowReverse 25s linear infinite;
+    }
+    .anim-glow {
+      animation: glowing 3s ease-in-out infinite alternate;
+    }
+    .anim-float {
+      animation: float 6s ease-in-out infinite alternate;
+    }
+    @keyframes pulse {
+      0% { opacity: 0.35; transform: scale(0.98); }
+      100% { opacity: 0.85; transform: scale(1.02); }
+    }
+    @keyframes flow {
+      from { stroke-dashoffset: 400; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes flowReverse {
+      from { stroke-dashoffset: 0; }
+      to { stroke-dashoffset: 400; }
+    }
+    @keyframes glowing {
+      0% { filter: drop-shadow(0 0 4px rgba(99, 102, 241, 0.4)); }
+      100% { filter: drop-shadow(0 0 16px rgba(236, 72, 153, 0.8)); }
+    }
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(-8px); }
+    }
+  </style>
+
+  <!-- Background Canvas -->
+  <rect width="1200" height="340" rx="16" fill="url(#bgGradient)" />
+
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.12">
+    <path d="M0,40 H1200 M0,80 H1200 M0,120 H1200 M0,160 H1200 M0,200 H1200 M0,240 H1200 M0,280 H1200 M0,320 H1200" stroke="#6366F1" stroke-width="0.8" />
+    <path d="M60,0 V340 M120,0 V340 M180,0 V340 M240,0 V340 M300,0 V340 M360,0 V340 M420,0 V340 M480,0 V340 M540,0 V340 M600,0 V340 M660,0 V340 M720,0 V340 M780,0 V340 M840,0 V340 M900,0 V340 M960,0 V340 M1020,0 V340 M1080,0 V340 M1140,0 V340" stroke="#6366F1" stroke-width="0.8" />
+  </g>
+
+  <!-- Ambient Glow Circles (Dynamic Pulse) -->
+  <circle cx="980" cy="170" r="160" fill="#6366F1" opacity="0.18" filter="url(#glow)" class="anim-pulse" />
+  <circle cx="820" cy="100" r="110" fill="#EC4899" opacity="0.15" filter="url(#glow)" class="anim-pulse" />
+  <circle cx="1060" cy="240" r="120" fill="#06B6D4" opacity="0.16" filter="url(#glow)" class="anim-pulse" />
+
+  <!-- Dynamic ER Diagram Visuals on the Right -->
+  <g transform="translate(730, 35)">
+    <!-- Animated Relationship Connectors -->
+    <path d="M 120 70 C 190 70, 190 180, 260 180" fill="none" stroke="url(#cyanBlue)" stroke-width="2.5" class="anim-flow" />
+    <path d="M 120 100 C 180 100, 200 40, 260 40" fill="none" stroke="url(#accentGradient)" stroke-width="2.5" class="anim-flow-reverse" />
+    <path d="M 260 210 C 200 210, 180 250, 120 250" fill="none" stroke="#8B5CF6" stroke-width="2" class="anim-flow" opacity="0.7" />
+
+    <!-- Table 1: users (Left) -->
+    <g class="anim-float" style="animation-delay: 0s;">
+      <rect x="0" y="30" width="160" height="135" rx="8" fill="url(#cardGrad)" stroke="#6366F1" stroke-width="1.5" filter="url(#softGlow)" />
+      <!-- Table Header -->
+      <rect x="0" y="30" width="160" height="32" rx="8" fill="#4F46E5" fill-opacity="0.4" />
+      <circle cx="15" cy="46" r="4" fill="#38BDF8" />
+      <text x="28" y="51" fill="#F8FAFC" class="badge-text" font-size="13">users</text>
+      <!-- Table Rows -->
+      <text x="14" y="80" fill="#F43F5E" class="badge-text">PK</text>
+      <text x="38" y="80" fill="#E2E8F0" class="badge-text">id</text>
+      <text x="110" y="80" fill="#64748B" class="badge-text">uuid</text>
+
+      <text x="14" y="102" fill="#38BDF8" class="badge-text">✦</text>
+      <text x="38" y="102" fill="#E2E8F0" class="badge-text">email</text>
+      <text x="104" y="102" fill="#64748B" class="badge-text">varchar</text>
+
+      <text x="14" y="124" fill="#38BDF8" class="badge-text">✦</text>
+      <text x="38" y="124" fill="#E2E8F0" class="badge-text">org_id</text>
+      <text x="110" y="124" fill="#64748B" class="badge-text">uuid</text>
+
+      <text x="14" y="146" fill="#64748B" class="badge-text">•</text>
+      <text x="38" y="146" fill="#94A3B8" class="badge-text">created_at</text>
+      <text x="100" y="146" fill="#64748B" class="badge-text">timestamptz</text>
+    </g>
+
+    <!-- Table 2: organizations (Right Top) -->
+    <g class="anim-float" style="animation-delay: -2s;">
+      <rect x="240" y="10" width="170" height="105" rx="8" fill="url(#cardGrad)" stroke="#EC4899" stroke-width="1.5" filter="url(#softGlow)" />
+      <!-- Table Header -->
+      <rect x="240" y="10" width="170" height="32" rx="8" fill="#DB2777" fill-opacity="0.4" />
+      <circle cx="255" cy="26" r="4" fill="#F472B6" />
+      <text x="268" y="31" fill="#F8FAFC" class="badge-text" font-size="13">organizations</text>
+      <!-- Table Rows -->
+      <text x="254" y="60" fill="#F43F5E" class="badge-text">PK</text>
+      <text x="278" y="60" fill="#E2E8F0" class="badge-text">id</text>
+      <text x="350" y="60" fill="#64748B" class="badge-text">uuid</text>
+
+      <text x="254" y="82" fill="#38BDF8" class="badge-text">✦</text>
+      <text x="278" y="82" fill="#E2E8F0" class="badge-text">name</text>
+      <text x="344" y="82" fill="#64748B" class="badge-text">varchar</text>
+
+      <text x="254" y="102" fill="#64748B" class="badge-text">•</text>
+      <text x="278" y="102" fill="#94A3B8" class="badge-text">tier</text>
+      <text x="350" y="102" fill="#64748B" class="badge-text">text</text>
+    </g>
+
+    <!-- Table 3: schema_models (Right Bottom) -->
+    <g class="anim-float" style="animation-delay: -4s;">
+      <rect x="220" y="145" width="185" height="120" rx="8" fill="url(#cardGrad)" stroke="#06B6D4" stroke-width="1.5" filter="url(#softGlow)" />
+      <!-- Table Header -->
+      <rect x="220" y="145" width="185" height="32" rx="8" fill="#0891B2" fill-opacity="0.4" />
+      <circle cx="235" cy="161" r="4" fill="#22D3EE" />
+      <text x="248" y="166" fill="#F8FAFC" class="badge-text" font-size="13">schema_models</text>
+      <!-- Table Rows -->
+      <text x="234" y="195" fill="#F43F5E" class="badge-text">PK</text>
+      <text x="258" y="195" fill="#E2E8F0" class="badge-text">id</text>
+      <text x="340" y="195" fill="#64748B" class="badge-text">uuid</text>
+
+      <text x="234" y="217" fill="#F59E0B" class="badge-text">FK</text>
+      <text x="258" y="217" fill="#E2E8F0" class="badge-text">user_id</text>
+      <text x="340" y="217" fill="#64748B" class="badge-text">uuid</text>
+
+      <text x="234" y="239" fill="#38BDF8" class="badge-text">✦</text>
+      <text x="258" y="239" fill="#E2E8F0" class="badge-text">ddl_spec</text>
+      <text x="340" y="239" fill="#64748B" class="badge-text">jsonb</text>
+    </g>
+  </g>
+
+  <!-- Left Side: Branding & Headlines -->
+  <g transform="translate(60, 60)">
+    <!-- Category Pill Badge -->
+    <g transform="translate(0, 0)">
+      <rect width="260" height="28" rx="14" fill="#312E81" fill-opacity="0.6" stroke="#6366F1" stroke-width="1" />
+      <circle cx="14" cy="14" r="5" fill="#10B981" />
+      <text x="28" y="19" class="tagline">Curated Awesome List</text>
+    </g>
+
+    <!-- Main Title -->
+    <text x="0" y="80" class="title">
+      Awesome Database Modeling
+    </text>
+
+    <!-- Subtitle -->
+    <text x="0" y="125" class="subtitle">
+      Comprehensive Ecosystem of SaaS Platforms &amp; Open-Source Tools
+    </text>
+
+    <!-- Feature Tags -->
+    <g transform="translate(0, 160)">
+      <!-- Pill 1 -->
+      <g transform="translate(0, 0)">
+        <rect width="145" height="30" rx="6" fill="#1E293B" stroke="#475569" stroke-width="1" />
+        <text x="12" y="20" fill="#E2E8F0" class="badge-text">📊 ER Diagrams</text>
+      </g>
+
+      <!-- Pill 2 -->
+      <g transform="translate(155, 0)">
+        <rect width="165" height="30" rx="6" fill="#1E293B" stroke="#475569" stroke-width="1" />
+        <text x="12" y="20" fill="#E2E8F0" class="badge-text">⚡ DDL Generation</text>
+      </g>
+
+      <!-- Pill 3 -->
+      <g transform="translate(330, 0)">
+        <rect width="175" height="30" rx="6" fill="#1E293B" stroke="#475569" stroke-width="1" />
+        <text x="12" y="20" fill="#E2E8F0" class="badge-text">🔄 Reverse Engineering</text>
+      </g>
+
+      <!-- Pill 4 -->
+      <g transform="translate(515, 0)">
+        <rect width="165" height="30" rx="6" fill="#1E293B" stroke="#475569" stroke-width="1" />
+        <text x="12" y="20" fill="#E2E8F0" class="badge-text">🤝 Schema Collab</text>
+      </g>
+    </g>
+
+    <!-- Bottom Highlights -->
+    <g transform="translate(0, 215)">
+      <text x="0" y="0" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="13px">
+        🚀 Categorized by Enterprise Scale, Pricing Tiers, Free Limits &amp; Open-Source Stargazers
+      </text>
+    </g>
+  </g>
+</svg>
